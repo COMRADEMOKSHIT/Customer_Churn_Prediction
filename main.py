@@ -29,15 +29,16 @@ def load_data(file) -> pd.DataFrame:
 
 uploaded_file = st.sidebar.file_uploader("Upload CSV", type=["csv"])
 
+DEFAULT_PATH = "WA_Fn-UseC_-Telco-Customer-Churn.csv"
 
 if uploaded_file is not None:
     df = load_data(uploaded_file)
 elif st.sidebar.checkbox("Use bundled sample file (if present)", value=True):
     try:
-        df = load_data(uploaded_file)
+        df = load_data(DEFAULT_PATH)
     except FileNotFoundError:
         st.warning(
-            f"Couldn't find `{uploaded_file}` next to the app. "
+            f"Couldn't find `{DEFAULT_PATH}` next to the app. "
             "Upload a CSV in the sidebar to get started."
         )
         st.stop()
