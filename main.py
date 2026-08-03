@@ -3,6 +3,7 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+st.read(df)
 df.head()
 
 df.dtypes
