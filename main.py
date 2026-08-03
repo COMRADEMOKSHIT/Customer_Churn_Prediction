@@ -16,6 +16,7 @@ st.set_page_config(
 st.title("📊 Telco Customer Churn — EDA Dashboard")
 st.caption("Upload the Telco churn CSV (or use the bundled sample) to explore it.")
 
+
 @st.cache_data
 def load_data(file) -> pd.DataFrame:
     data = pd.read_csv(file)
@@ -26,10 +27,26 @@ def load_data(file) -> pd.DataFrame:
     return data
 
 
+uploaded_file = st.sidebar.file_uploader("Upload CSV", type=["csv"])
 
-DEFAULT_PATH = "WA_Fn-UseC_-Telco-Customer-Churn.csv"
 
-df = load_data(DEFAULT_PATH)
+if uploaded_file is not None:
+    df = load_data(uploaded_file)
+elif st.sidebar.checkbox("Use bundled sample file (if present)", value=True):
+    try:
+        df = load_data(DEFAULT_PATH)
+    except FileNotFoundError:
+        st.warning(
+            f"Couldn't find `{DEFAULT_PATH}` next to the app. "
+            "Upload a CSV in the sidebar to get started."
+        )
+        st.stop()
+else:
+    st.info("Upload a CSV in the sidebar to get started.")
+    st.stop()
+
+st.subheader("Data preview")
+st.dataframe(df.head())
 
 col1, col2 = st.columns(2)
 with col1:
