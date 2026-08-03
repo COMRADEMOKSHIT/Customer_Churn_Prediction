@@ -29,9 +29,8 @@ def load_data(file) -> pd.DataFrame:
 
 DEFAULT_PATH = "WA_Fn-UseC_-Telco-Customer-Churn.csv"
 
-
-st.subheader("Data preview")
-st.dataframe(df.head())
+try:
+    df = load_data(DEFAULT_PATH)
 
 col1, col2 = st.columns(2)
 with col1:
