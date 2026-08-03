@@ -34,10 +34,10 @@ if uploaded_file is not None:
     df = load_data(uploaded_file)
 elif st.sidebar.checkbox("Use bundled sample file (if present)", value=True):
     try:
-        df = load_data(DEFAULT_PATH)
+        df = load_data(uploaded_file)
     except FileNotFoundError:
         st.warning(
-            f"Couldn't find `{DEFAULT_PATH}` next to the app. "
+            f"Couldn't find `{uploaded_file}` next to the app. "
             "Upload a CSV in the sidebar to get started."
         )
         st.stop()
