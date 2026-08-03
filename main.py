@@ -3,20 +3,20 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
-st.df.head()
+df.head()
 
-st.df.dtypes
+df.dtypes
 
-st.df.isnull().sum()
+df.isnull().sum()
 
 df['TotalCharges'] = pd.to_numeric(df.TotalCharges, errors='coerce')
-st.df.isnull().sum()
+df.isnull().sum()
 
-st.df = df.dropna()
-st.df.isnull().sum()
+df = df.dropna()
+df.isnull().sum()
 
 df = df.drop(['customerID'], axis = 1)
-st.df.head()
+df.head()
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -40,15 +40,15 @@ sns.countplot(x = "Contract", data = df, ax=axes[2][2], palette=palette)
 sns.countplot(x = "PaperlessBilling", data = df, ax=axes[2][3], palette=palette)
 ax = sns.countplot(x = "PaymentMethod", data = df, ax=axes[2][4], palette=palette)
 ax.set_xticklabels(ax.get_xticklabels(),rotation=90)
-st.plt.tight_layout()
-st.plt.show()
+plt.tight_layout()
+plt.show()
 
 fig, (ax1, ax2, ax3) = plt.subplots(3)
 sns.kdeplot(df["tenure"], shade=True, color="b",ax = ax1)
 sns.kdeplot(df["MonthlyCharges"], shade=True, color="r", ax = ax2)
 sns.kdeplot(df["TotalCharges"], shade=True, color="g", ax = ax3)
-st.fig.tight_layout()
-st.plt.show()
+fig.tight_layout()
+plt.show()
 
 from sklearn.preprocessing import LabelEncoder
 
@@ -58,4 +58,4 @@ def object_to_int(dataframe_series):
     return dataframe_series
 
 df = df.apply(lambda x: object_to_int(x))
-st.df.head()
+df.head()
