@@ -14,7 +14,6 @@ st.set_page_config(
 )
 
 st.title("📊 Telco Customer Churn — EDA Dashboard")
-st.caption("Upload the Telco churn CSV (or use the bundled sample) to explore it.")
 
 
 @st.cache_data
