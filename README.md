@@ -60,5 +60,25 @@ The project utilizes the following technologies and libraries:
 - **Pandas**: Data manipulation and analysis.
 - **NumPy**: Numerical computations.
 - **Scikit-learn**: Machine learning utilities.
-- **Seabon**: 
+- **Seabon**: to create attractive, informative statistical graphics and complex charts
 - **Matplotlib**: Data visualization.
+
+---
+
+## Project Structure
+
+```plaintext
+Stock_Price_Prediction
+│
+├── WA_Fn-UseC_-Telco-Customer-Churn.csv            # Dataset used for training
+├── main.py                                         # Streamlit app script
+├── requirements.txt                                # Python dependencies
+└── README.md                                       # Project documentation
+ 
+```
+## License
+
+**MOKSHIT**
+- Email: officialmokshit@gmail.com
+- LinkedIn: https://www.linkedin.com/in/mokshit-4a395923b
+- GitHub: https://github.com/COMRADEMOKSHIT
