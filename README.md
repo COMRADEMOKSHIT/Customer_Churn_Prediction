@@ -32,23 +32,23 @@ Target variable: Churn (Yes/No)
 **Tech Stack**:
 
 Component	Tool
-App framework	Streamlit
-Data handling	Pandas, NumPy
-Visualization	Seaborn, Matplotlib
-Preprocessing	scikit-learn (LabelEncoder)
-Deployment	Streamlit Community Cloud
+- App framework	Streamlit
+- Data handling	Pandas, NumPy
+- Visualization	Seaborn, Matplotlib
+- Preprocessing	scikit-learn (LabelEncoder)
+- Deployment	Streamlit Community Cloud
 
 ## Features
 
-Data Upload/Loading — users can upload their own CSV or use a bundled sample file
-Data Cleaning — automatically converts TotalCharges to numeric, drops nulls, removes the non-predictive customerID column
-Data Preview — displays column types and missing-value summary
-Categorical Distribution Plots — count plots across 15 categorical features (gender, contract type, services, etc.)
-Numeric Distribution Plots — KDE plots for tenure, MonthlyCharges, TotalCharges
-Label Encoding — converts categorical columns to numeric form, ready for ML modeling
-Downloadable Output — encoded dataset available as a CSV download
+- **Data Upload/Loading** — users can upload their own CSV or use a bundled sample file
+- **Data Cleaning** — automatically converts TotalCharges to numeric, drops nulls, removes the non-predictive customerID column
+- **Data Preview** — displays column types and missing-value summary
+- **Categorical Distribution Plots** — count plots across 15 categorical features (gender, contract type, services, etc.)
+- **Numeric Distribution Plots** — KDE plots for tenure, MonthlyCharges, TotalCharges
+- **Label Encoding** — converts categorical columns to numeric form, ready for ML modeling
+- **Downloadable Output** — encoded dataset available as a CSV download
 
-Current Scope: Exploratory Data Analysis (EDA) and data preprocessing only — no predictive model is trained yet.
+**Current Scope**: Exploratory Data Analysis (EDA) and data preprocessing only — no predictive model is trained yet.
 
 ---
 
