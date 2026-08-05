@@ -1,3 +1,8 @@
+# live (deploy on Streamlit Community io) :
+https://cust0merchurnprediction.streamlit.app/
+
+---
+
 # Customer_Churn_Prediction
 A classification model that predicts customer churn, enabling the business to target retention offers at the customers most likely to leave and utilizes a user-friendly interface built with Streamlit.
 
