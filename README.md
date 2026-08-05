@@ -52,3 +52,13 @@ Current Scope: Exploratory Data Analysis (EDA) and data preprocessing only — n
 
 ---
 
+## Technologies Used
+
+The project utilizes the following technologies and libraries:
+- **Python**: Programming language for backend and model development.
+- **Streamlit**: Web framework for frontend.
+- **Pandas**: Data manipulation and analysis.
+- **NumPy**: Numerical computations.
+- **Scikit-learn**: Machine learning utilities.
+- **TensorFlow**: Deep learning framework for model training.
+- **Matplotlib**: Data visualization.
