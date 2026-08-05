@@ -60,5 +60,5 @@ The project utilizes the following technologies and libraries:
 - **Pandas**: Data manipulation and analysis.
 - **NumPy**: Numerical computations.
 - **Scikit-learn**: Machine learning utilities.
-- **TensorFlow**: Deep learning framework for model training.
+- **Seabon**: 
 - **Matplotlib**: Data visualization.
