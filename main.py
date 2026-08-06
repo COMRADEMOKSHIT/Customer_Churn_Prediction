@@ -127,6 +127,6 @@ fig3.update_traces(hole=.4, hoverinfo="label+percent+name", textfont_size=16)
 
 fig3.update_layout(
     title_text="Gender and Churn Distributions",
-    annotations=[dict(text='Gender', x=0.18, y=0.5, font_size=20, showarrow=False),
-                 dict(text='Churn', x=0.78, y=0.5, font_size=20, showarrow=False)])
+    annotations=[dict(text='Gender', x=0.20, y=0.5, font_size=20, showarrow=False),
+                 dict(text='Churn', x=0.80, y=0.5, font_size=20, showarrow=False)])
 st.plotly_chart(fig3, use_container_width=True)
