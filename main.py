@@ -113,8 +113,6 @@ plt.close(fig2)
 
 st.subheader("Gender and Churn Distributions")
 
-st.subheader("Gender and Churn Distributions")
-
 gender_counts = df['gender'].value_counts()
 churn_counts = df['Churn'].value_counts()
 
@@ -129,6 +127,6 @@ fig3.update_traces(hole=.4, hoverinfo="label+percent+name", textfont_size=16)
 
 fig3.update_layout(
     title_text="Gender and Churn Distributions",
-    annotations=[dict(text='Gender', x=0.16, y=0.5, font_size=20, showarrow=False),
-                 dict(text='Churn', x=0.84, y=0.5, font_size=20, showarrow=False)])
+    annotations=[dict(text='Gender', x=0.16, y=0.7, font_size=20, showarrow=False),
+                 dict(text='Churn', x=0.84, y=0.3, font_size=20, showarrow=False)])
 st.plotly_chart(fig3, use_container_width=True)
