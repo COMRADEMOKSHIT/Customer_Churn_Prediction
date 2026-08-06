@@ -108,3 +108,22 @@ fig2.tight_layout()
 st.pyplot(fig2)
 plt.close(fig2)
 
+st.subheader("Gender and Churn Distributions")
+
+g_labels = ['Male', 'Female']
+c_labels = ['No', 'Yes']
+
+fig = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
+fig.add_trace(go.Pie(labels=g_labels, values=df['gender'].value_counts(), name="Gender"),
+              1, 1)
+fig.add_trace(go.Pie(labels=c_labels, values=df['Churn'].value_counts(), name="Churn"),
+              1, 2)
+
+
+fig.update_traces(hole=.4, hoverinfo="label+percent+name", textfont_size=16)
+
+fig.update_layout(
+    title_text="Gender and Churn Distributions",
+    annotations=[dict(text='Gender', x=0.16, y=0.5, font_size=20, showarrow=False),
+                 dict(text='Churn', x=0.84, y=0.5, font_size=20, showarrow=False)])
+fig.show()
