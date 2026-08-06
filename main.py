@@ -108,9 +108,3 @@ fig2.tight_layout()
 st.pyplot(fig2)
 plt.close(fig2)
 
-st.download_button(
-    "Download encoded data as CSV",
-    data=encoded_df.to_csv(index=False).encode("utf-8"),
-    file_name="telco_churn_encoded.csv",
-    mime="text/csv",
-)
