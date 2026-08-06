@@ -108,19 +108,6 @@ fig2.tight_layout()
 st.pyplot(fig2)
 plt.close(fig2)
 
-
-st.subheader("Label-encoded data (preview)")
-
-
-def object_to_int(series: pd.Series) -> pd.Series:
-    if series.dtype == "object":
-        series = LabelEncoder().fit_transform(series)
-    return series
-
-
-encoded_df = df.apply(lambda col: object_to_int(col))
-st.dataframe(encoded_df.head())
-
 st.download_button(
     "Download encoded data as CSV",
     data=encoded_df.to_csv(index=False).encode("utf-8"),
