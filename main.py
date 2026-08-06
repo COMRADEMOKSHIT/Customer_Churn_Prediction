@@ -129,6 +129,5 @@ fig.update_layout(
     title_text="Gender and Churn Distributions",
     annotations=[dict(text='Gender', x=0.16, y=0.5, font_size=20, showarrow=False),
                  dict(text='Churn', x=0.84, y=0.5, font_size=20, showarrow=False)])
-st.plotly(fig)
+st.subplots(fig)
 make_subplots.close(fig)
-fig.show()
