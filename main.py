@@ -113,13 +113,15 @@ plt.close(fig2)
 
 st.subheader("Gender and Churn Distributions")
 
-g_labels = ['Male', 'Female']
-c_labels = ['No', 'Yes']
+st.subheader("Gender and Churn Distributions")
+
+gender_counts = df['gender'].value_counts()
+churn_counts = df['Churn'].value_counts()
 
 fig3 = make_subplots(rows=1, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}]])
-fig3.add_trace(go.Pie(labels=g_labels, values=df['gender'].value_counts(), name="Gender"),
+fig3.add_trace(go.Pie(labels=gender_counts.index, values=gender_counts.values, name="Gender"),
               1, 1)
-fig3.add_trace(go.Pie(labels=c_labels, values=df['Churn'].value_counts(), name="Churn"),
+fig3.add_trace(go.Pie(labels=churn_counts.index, values=churn_counts.values, name="Churn"),
               1, 2)
 
 
@@ -129,30 +131,4 @@ fig3.update_layout(
     title_text="Gender and Churn Distributions",
     annotations=[dict(text='Gender', x=0.16, y=0.5, font_size=20, showarrow=False),
                  dict(text='Churn', x=0.84, y=0.5, font_size=20, showarrow=False)])
-fig3.tight_layout()
-st.subplots(fig3)
-make_subplots.close(fig3)
-
-plt.figure(figsize=(6, 6))
-labels =["Churn: Yes","Churn:No"]
-values = [1869,5163]
-labels_gender = ["F","M","F","M"]
-sizes_gender = [939,930 , 2544,2619]
-colors = ['#ff6666', '#66b3ff']
-colors_gender = ['#c2c2f0','#ffb3e6', '#c2c2f0','#ffb3e6']
-explode = (0.3,0.3) 
-explode_gender = (0.1,0.1,0.1,0.1)
-textprops = {"fontsize":15}
-
-plt.pie(values, labels=labels,autopct='%1.1f%%',pctdistance=1.08, labeldistance=0.8,colors=colors, startangle=90,frame=True, explode=explode,radius=10, textprops =textprops, counterclock = True, )
-plt.pie(sizes_gender,labels=labels_gender,colors=colors_gender,startangle=90, explode=explode_gender,radius=7, textprops =textprops, counterclock = True, )
-
-centre_circle = plt.Circle((0,0),5,color='black', fc='white',linewidth=0)
-fig = plt.gcf()
-fig.gca().add_artist(centre_circle)
-
-plt.title('Churn by Gender: Male(M), Female(F)', fontsize=25, y=1.1)
-
-plt.axis('equal')
-plt.tight_layout()
-plt.show()
+st.plotly_chart(fig3, use_container_width=True)
